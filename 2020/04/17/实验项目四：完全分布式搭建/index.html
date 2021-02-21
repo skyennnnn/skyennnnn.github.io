@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Skyen">
+    
+    <title>
+        
+            实验项目四：完全分布式搭建 |
+        
+        Skyen&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/head.jpeg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Misaka.jpg","favicon":"/images/head.jpeg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/3.JPG","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Skyen's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Skyen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">实验项目四：完全分布式搭建</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Misaka.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Skyen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-04-17 15:30:16
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%95%B0%E6%8D%AE/">数据</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="实验内容与步骤"><a href="#实验内容与步骤" class="headerlink" title="实验内容与步骤"></a>实验内容与步骤</h1><h2 id="1-配置网络环境："><a href="#1-配置网络环境：" class="headerlink" title="1. 配置网络环境："></a>1. 配置网络环境：</h2><p>本次实验用的是Cent OS 6.5 minimal版本，相应的版本可以在官网上下载。<br>首先安装：<br>我是用的是parallels desktop 来安装，安装步骤详见：<br>链接: <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43491622/article/details/104415928" >Mac os上配置PD虚拟机，使其共享网络访问公网<i class="fas fa-external-link-alt"></i></a>.</p>
+<p><img src="https://img-blog.csdnimg.cn/20200310214153424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>vi /etc/sysconfig/network-scripts/ifcfg-eth0</code>进行网络环境的相关配置：<br><img src="https://img-blog.csdnimg.cn/20200310215021166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>设置DNS解析（不同的系统不一样）：<br><code>vi /etc/resolv.conf</code><br><img src="https://img-blog.csdnimg.cn/20200310215139846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><code>service network restart</code>命令，重启网络服务。<br>测试网络：<br><img src="https://img-blog.csdnimg.cn/20200310215635846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>ping自己和外网都能通，网络配置成功。</p>
+<h2 id="2-时间同步ntp："><a href="#2-时间同步ntp：" class="headerlink" title="2. 时间同步ntp："></a>2. 时间同步ntp：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ntp ntpdate</span><br><span class="line"> ntpdate cn.pool.ntp.org</span><br></pre></td></tr></table></figure>
+<p> 以上命令进行时间的同步：<br><code> date</code>查看当前时间<img src="https://img-blog.csdnimg.cn/20200310220513268.png" alt="在这里插入图片描述"></p>
+<h2 id="3-克隆系统："><a href="#3-克隆系统：" class="headerlink" title="3. 克隆系统："></a>3. 克隆系统：</h2><p>前两步做好了之后，可以关机，然后将系统进行克隆，因为需要配置Hadoop的完全分布式搭建，所以克隆了两个主机。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200310220855795.png" alt="在这里插入图片描述"><br>主机克隆后，需要将网络环境重新配置一下，将硬件地址和UUID删除，并将IP地址更换，之后删除Linux物理地址绑定的文件（该文件会在操作系统重启并生成物理地址以后将物理地址绑定到IP上）<br><code>rm -rf /etc/udev/rules.d/70-persistent-net.rules</code></p>
+<p>当然，也可以更改一下主机名称：<br><code>vi /etc/sysconfig/network</code><br>将HOSTNAME=后面的内容更改成需要的名称即可。</p>
+<p>修改网络映射hosts<br>vim /etc/hosts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">192.168.100.132 master</span><br><span class="line">192.168.100.133 slave1</span><br><span class="line">192.168.100.134 slave2</span><br></pre></td></tr></table></figure>
+<p>最后需要重启一下系统：<br><code>shutdown -r now </code>或者<code>init 6 </code></p>
+<p>最后的效果：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200310221352201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="4-免秘钥操作："><a href="#4-免秘钥操作：" class="headerlink" title="4. 免秘钥操作："></a>4. 免秘钥操作：</h2><ol>
+<li><p>生成密钥<br>ssh-keygen -t rsa # 一路回车</p>
+</li>
+<li><p>将集群中的所有公钥集中到某台机器，生成免密授权登录文件<br>bigdata22:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub bigdata11:/root/.ssh/22</span><br></pre></td></tr></table></figure>
+
+<p>bigdata33:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub bigdata11:/root/.ssh/33</span><br></pre></td></tr></table></figure>
+<p>bigdata11:<br>切换到根目录下的.ssh文件中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br><span class="line">cat 22 &gt;&gt; authorized_keys</span><br><span class="line">cat 33 &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure></li>
+<li><p>对文件进行授权：<br><code>chmod 600 authorized_keys</code><br>必须改，不然不能免密登录</p>
+</li>
+<li><p>将授权列表分发给bigdata22和bigdata33:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/authorized_keys bigdata22:/root/.ssh/authorized_keys</span><br><span class="line">scp ~/.ssh/authorized_keys bigdata33:/root/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200310222853849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="5-Jdk和Hadoop安装配置："><a href="#5-Jdk和Hadoop安装配置：" class="headerlink" title="5. Jdk和Hadoop安装配置："></a>5. Jdk和Hadoop安装配置：</h2><p>利用ForkLift将所需要的jdk文件以及Hadoop文件拷到三个主机上：<br><img src="https://img-blog.csdnimg.cn/20200310222950939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以先配好一台机器中的配置文件，再将软件复制到其他机器，减少配置的工作量。</p>
+</li>
+</ol>
+<p>rpm -ivh 命令安装rpm包，安装默认路径：<br><img src="https://img-blog.csdnimg.cn/20200310223129491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>配置环境变量:<br><code>vi   .bash_profile</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200310223306287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>需要<code>source .bash_profile</code>加载一下。<br>测试环境JDK：<br><img src="https://img-blog.csdnimg.cn/2020031022352216.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>HADOOP</strong> 安装配置：</p>
+<ol>
+<li>安装源码包用tar -zxvf<br>Cd  /opt/software     tar  -zxvf hadoop-2.5.1_x64.tar.gz </li>
+<li>配置环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vi /root/.bash_profile</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.7.0_79</span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/opt/software/hadoop-2.5.1</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$HADOOP_HOME</span>/sbin</span><br></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20200310223829377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>加载环境变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Source  /root/.bash_profile  </span><br></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/2020031022384327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<h2 id="6-core-site-xml，hdfs-site-xml，mapred-site-xml，yarn-site-xml配置"><a href="#6-core-site-xml，hdfs-site-xml，mapred-site-xml，yarn-site-xml配置" class="headerlink" title="6. core-site.xml，hdfs-site.xml，mapred-site.xml，yarn-site.xml配置:"></a>6. core-site.xml，hdfs-site.xml，mapred-site.xml，yarn-site.xml配置:</h2><ol>
+<li><p>hadoop-env.sh 和 yarn-env.sh 中将Java的环境变量添加：<br><img src="https://img-blog.csdnimg.cn/20200310224737376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200310224743760.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>core-site.xml配置：<br><img src="https://img-blog.csdnimg.cn/20200310225323905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+</ol>
+<p>代码片段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;hdfs://master:9000&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;默认的文件系统&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;!-- 8020 9000 都是HDFS的RPC端口，都可以 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;/hadoop/hadoop-2.6.5/data&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>hdfs-site.xml配置：</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200310225054964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码片段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;2&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;数据块备份数&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.permissions.enabled&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;<span class="literal">false</span>&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;关闭权限检查&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>mapred-site.xml配置：</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200310225229886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码片段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;yarn&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;指定运行mapreduce的框架&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><p>yarn-site.xml配置：<br><img src="https://img-blog.csdnimg.cn/20200310224906117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>代码片段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;master&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;指定namenode节点的地址&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;NodeManager上运行的附属服务&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.nodemanager.aux-services.mapreduce_shuffle.class&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;指定shuffle类&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;<span class="literal">true</span>&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;是否启用日志聚合，将slave节点的日志聚合至master&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>将配置好的文件包分别发至其余两个主机上：<br><code>scp -r /opt/software/hadoop-2.5.1 bigdata22:/opt/software</code><br><code>scp -r /opt/software/hadoop-2.5.1 bigdata33:/opt/software</code><br><img src="https://img-blog.csdnimg.cn/20200310230427429.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>更改bigdata11上的slaves文件：</p>
+</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/202003102305260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="7-格式化启动节点"><a href="#7-格式化启动节点" class="headerlink" title="7. 格式化启动节点:"></a>7. 格式化启动节点:</h2><p>启动hadoop<br><code>hadoop namenode -format</code><br><img src="https://img-blog.csdnimg.cn/20200310230757332.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>启动hdfs<br><code>start-dfs.sh</code><br><img src="https://img-blog.csdnimg.cn/20200310230822500.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>启动yarn<br><code>start-yarn.sh</code><br><img src="https://img-blog.csdnimg.cn/20200310230918209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看一下状态：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020031023221132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="8-web访问测试"><a href="#8-web访问测试" class="headerlink" title="8. web访问测试:"></a>8. web访问测试:</h2><ul>
+<li>HDFS的web端: <a class="link"   target="_blank" rel="noopener" href="http://master:50070/" >http://master:50070<i class="fas fa-external-link-alt"></i></a><br><img src="https://img-blog.csdnimg.cn/20200310232219213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200310232226715.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>MapReduce的web端: <a class="link"   target="_blank" rel="noopener" href="http://master:8088/" >http://master:8088<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200310232233946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>成功访问，环境搭建完成。</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/09/20/JavaWeb%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">JavaWeb学习（一）</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/04/14/%E5%AE%9E%E9%AA%8C%E9%A1%B9%E7%9B%AE%E4%B8%89%EF%BC%9Ajava%20api%E8%AE%BF%E9%97%AEhdfs/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">实验项目三：java api访问hdfs</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Skyen</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

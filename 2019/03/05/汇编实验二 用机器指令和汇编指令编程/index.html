@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Skyen">
+    
+    <title>
+        
+            汇编实验二 用机器指令和汇编指令编程 |
+        
+        Skyen&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/head.jpeg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Misaka.jpg","favicon":"/images/head.jpeg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/3.JPG","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Skyen's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Skyen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">汇编实验二 用机器指令和汇编指令编程</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Misaka.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Skyen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-03-05 15:30:16
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="实验任务"><a href="#实验任务" class="headerlink" title="实验任务"></a>实验任务</h1><h2 id="（1）使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实际运行情况填空。"><a href="#（1）使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实际运行情况填空。" class="headerlink" title="（1）使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实际运行情况填空。"></a><font color="408080"><strong>（1）使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实际运行情况填空。</strong></h2><h3 id="书上实验内容："><a href="#书上实验内容：" class="headerlink" title="书上实验内容："></a>书上实验内容：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">mov ax,ffff</span><br><span class="line">mov ds,ax</span><br><span class="line"> </span><br><span class="line">mov ax,2200</span><br><span class="line">mov ss,ax</span><br><span class="line"> </span><br><span class="line">mov sp,0100</span><br><span class="line"></span><br><span class="line">mov ax,[0]             ;ax&#x3D; C0EA;</span><br><span class="line">add ax,[2]             ;ax&#x3D; C0FC;</span><br><span class="line">mov bx,[4]             ;bx&#x3D; 30F0;</span><br><span class="line">add bx,[6]             ;bx&#x3D; 6021;</span><br><span class="line"> </span><br><span class="line">push ax                ;sp&#x3D; 00FE;修改的内存单元的地址是220FE,内容是C0FC</span><br><span class="line">push bx                ;sp&#x3D; 00FC;修改的内存单元的地址是220FC,内容是6021</span><br><span class="line">pop ax                 ;sp&#x3D; 00FE;ax&#x3D; 6021</span><br><span class="line">pop bx                 ;sp&#x3D; 0100;bx&#x3D; C0FC</span><br><span class="line"> </span><br><span class="line">push [4]               ;sp&#x3D; 00FE;修改的内存单元的地址是220FE,内容是30F0</span><br><span class="line">push [6]               ;sp&#x3D; 00FC;修改的内存单元的地址是220FC,内容是2F31</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><p><img src="https://img-blog.csdnimg.cn/2018102600160755.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="可爱的图一"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181025234421418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="淘气的图二"></p>
+<h3 id="程序分析："><a href="#程序分析：" class="headerlink" title="程序分析："></a>程序分析：</h3><ul>
+<li><p>首先，我使用的是Mac 系统下 DOSBox 的debug 环境。 </p>
+<p> 不同的系统运行结果是不是一样呢？有可能吧～ 主要考虑他的原理。</p>
+</li>
+<li><p>逐步分析：<br>首先，前两行代码将ds指向了FFFF段内存，也就是数据段是ffffH：00开始的内存单元了。<br>然后，建立一个栈结构，ss指向2200H段的内存，初始化栈顶指针是100H，ss:sp指向栈底后面第一个单元（目前栈结构是空）；也就是说这个栈结构栈底后面第一个单元地址是2200:100H（物理地址：22100H）</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov ax,[0]        &#x2F;&#x2F;ax&#x3D;C0EA;</span><br><span class="line">add ax,[2]        &#x2F;&#x2F;ax&#x3D;ax+[2]&#x3D;C0EA+0012&#x3D;C0FC</span><br><span class="line">mov bx,[4]        &#x2F;&#x2F;bx&#x3D;30F0;</span><br><span class="line">add bx,[6]        &#x2F;&#x2F;bx&#x3D;bx+[6]&#x3D;31F0+2F30&#x3D;6120</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">push ax          &#x2F;&#x2F;将ax&#x3D;C0FC压入栈中;sp&#x3D;sp-2&#x3D;0100-2&#x3D;00FE;</span><br><span class="line">                   修改的内存单元的地址是220FE,内容是C0FC</span><br><span class="line">                   </span><br><span class="line">push bx          &#x2F;&#x2F;将bx&#x3D;6120压入栈中;sp&#x3D;sp-2&#x3D;00FE-2&#x3D;00FC</span><br><span class="line">                   修改的内存单元的地址是220FC,内容是6021</span><br><span class="line">                   </span><br><span class="line">pop ax           &#x2F;&#x2F;将ax&#x3D;C0FC推出栈;sp&#x3D;sp+2&#x3D;00FE;ax&#x3D;6021</span><br><span class="line">pop bx           &#x2F;&#x2F;将ax&#x3D;C0FC推出栈;sp&#x3D;sp+2&#x3D;0100;bx&#x3D;C0FC</span><br><span class="line"></span><br><span class="line">push [4]         &#x2F;&#x2F;将DS:0004压入栈中;sp&#x3D;sp-2&#x3D;00FE;</span><br><span class="line">                   修改的内存单元的地址是220FE,内容是30F0</span><br><span class="line">                 </span><br><span class="line">push [6]         &#x2F;&#x2F;将DS:0006压入栈中;sp&#x3D;sp-2&#x3D;00FC;</span><br><span class="line">                   修改的内存单元的地址是220FC,内容是2F31</span><br></pre></td></tr></table></figure>
+<h3 id="对比实验："><a href="#对比实验：" class="headerlink" title="对比实验："></a>对比实验：</h3><p><img src="https://img-blog.csdnimg.cn/20181026085254534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026085753154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026090100368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026163804766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">mov ax,2100</span><br><span class="line">mov ds,ax</span><br><span class="line"> </span><br><span class="line">mov ax,2200</span><br><span class="line">mov ss,ax</span><br><span class="line"> </span><br><span class="line">mov sp,0100</span><br><span class="line"></span><br><span class="line">mov ax,[0]          ;ax&#x3D; 3130          </span><br><span class="line">add ax,[2]          ;ax&#x3D; 6462            </span><br><span class="line">mov bx,[4]          ;bx&#x3D; 3534            </span><br><span class="line">add bx,[6]          ;bx&#x3D; 6C6A            </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">push ax             ;sp&#x3D; 00FE</span><br><span class="line">                    ;修改的内存单元的地址是2200:FE到FF, 内容为:62 64                </span><br><span class="line">push bx             ;sp&#x3D; 00FC          </span><br><span class="line">                    ;修改的内存单元的地址是2200:FC到FD, 内容为:6A 6C                 </span><br><span class="line">pop ax              ;sp&#x3D;00FE   ;ax&#x3D; 6C6A              </span><br><span class="line">pop bx              ;sp&#x3D;0100   ;bx&#x3D; 6462            </span><br><span class="line"></span><br><span class="line">push [4]            ;sp&#x3D; 00FE         </span><br><span class="line">                    ;修改的内存单元的地址是2200:FE到FF, 内容为:34 35               </span><br><span class="line">push [6]            ;sp&#x3D; 00FC          </span><br><span class="line">                    ;修改的内存单元的地址是2200:FC到FD, 内容为:36 37                </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>可以看出尽管修改了数据，但是基本的原理都还相同。</p>
+</li>
+<li><p>程序理解：<br>【1】创建了一个栈的结构，它的实质就是一段连续的内存空间，只不过访问内存的方式不像我们原来的CPU寻址方式，使用push和pop访问。<br>【2】栈使用的实际空间是随着sp指针的指向而发生改变的，它和最大使用空间是有区别的。栈空，sp=100H，栈满，sp=0。<br>【3】栈操作的对象基本单位是字单元（2个字节），对应的内存就是2个内存单元。</p>
+</li>
+</ul>
+<h2 id="2-仔细观察图中的实验过程，然后分析：为什么2000-0-2000-f中的内容会发生改变。"><a href="#2-仔细观察图中的实验过程，然后分析：为什么2000-0-2000-f中的内容会发生改变。" class="headerlink" title="  (2) 仔细观察图中的实验过程，然后分析：为什么2000:0~2000:f中的内容会发生改变。"></a><font color="408080">  <strong>(2) 仔细观察图中的实验过程，然后分析：为什么2000:0~2000:f中的内容会发生改变。</strong></h2><h5 id="可能要再做些实验才能发现其中的规律。如果你在这里就正确回答了这个问题，那么要恭喜你，因为你有很好的悟性。大多数的学习者对这个问题还是比较迷惑的，不过不要紧，因为随着课程的进行，这个问题的答案将逐渐变得显而易见。"><a href="#可能要再做些实验才能发现其中的规律。如果你在这里就正确回答了这个问题，那么要恭喜你，因为你有很好的悟性。大多数的学习者对这个问题还是比较迷惑的，不过不要紧，因为随着课程的进行，这个问题的答案将逐渐变得显而易见。" class="headerlink" title="可能要再做些实验才能发现其中的规律。如果你在这里就正确回答了这个问题，那么要恭喜你，因为你有很好的悟性。大多数的学习者对这个问题还是比较迷惑的，不过不要紧，因为随着课程的进行，这个问题的答案将逐渐变得显而易见。"></a>可能要再做些实验才能发现其中的规律。如果你在这里就正确回答了这个问题，那么要恭喜你，因为你有很好的悟性。大多数的学习者对这个问题还是比较迷惑的，不过不要紧，因为随着课程的进行，这个问题的答案将逐渐变得显而易见。</h5><ol>
+<li><img src="https://img-blog.csdnimg.cn/20181026165524686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20181026165546403.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20181026165553344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<ul>
+<li>前三行指令的功能为：</li>
+</ul>
+<ol>
+<li><p>将2000进入ax寄存器中</p>
+</li>
+<li><p>将ax中的值赋值给ss</p>
+</li>
+<li><p>将sp的值改为0010。</p>
+</li>
+</ol>
+<ul>
+<li>变化的原因为：<br>在用t指令进行调试时，会产生中断。cpu将先把标志寄存器进栈，再把当前的cs的值进栈，IP的值最后进栈。</li>
+</ul>
+<h3 id="总结体会："><a href="#总结体会：" class="headerlink" title="总结体会："></a>总结体会：</h3><p> 初始没有执行这段代码时，使用d命令观察2000:00内存，都是00，怎么创建栈结构指向这段内存时，我们发现有些数据了。这些数据是什么？</p>
+<p>  发现呢这里面有cs值、ip值、ax值（这个容易看出来），还有bp值（00 00），还有那个一排英文字符。</p>
+<p>  了解一下之后呢，发现：<strong>t命令</strong>实际是引发了<strong>单步中断</strong>，执行中断例程时，CPU会将一些中断例程使用的的寄存器变量自动压栈到栈中，此例中就包括了上述的寄存器变量的值。</p>
+<p>注意：由于t命令必须保存寄存器变量的值（这个是中断程序定义的。）它也占用一定的空间。可能我们定义的栈空间比较小；频繁的使用push指令，为了避免栈顶超界，我们尽量使栈空间大些，就像此程序，设定栈空间是100H。</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2019/03/07/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B8%89%20%E7%BC%96%E7%A8%8B%C2%B7%E7%BC%96%E8%AF%91%C2%B7%E9%93%BE%E6%8E%A5%C2%B7%E8%B7%9F%E8%B8%AA/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">汇编实验三 编程·编译·链接·跟踪</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2019/03/02/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">第四章知识总结</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Skyen</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

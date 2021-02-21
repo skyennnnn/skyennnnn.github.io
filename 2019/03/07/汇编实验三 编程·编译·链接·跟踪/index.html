@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Skyen">
+    
+    <title>
+        
+            汇编实验三 编程·编译·链接·跟踪 |
+        
+        Skyen&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/head.jpeg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Misaka.jpg","favicon":"/images/head.jpeg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/3.JPG","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Skyen's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Skyen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">汇编实验三 编程·编译·链接·跟踪</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Misaka.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Skyen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-03-07 15:30:16
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="1-练习内容："><a href="#1-练习内容：" class="headerlink" title="1.  练习内容："></a>1.  练习内容：</h2><h3 id="练习一："><a href="#练习一：" class="headerlink" title="练习一："></a>练习一：</h3><ul>
+<li>编写汇编源程序t1.asm, 源程序代码如图1-1所示。<img src="https://img-blog.csdnimg.cn/20181026233526484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+<p>经过一系列的编写啊，调试啊等等，截图如下：<br><img src="https://img-blog.csdnimg.cn/20181026233602749.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026233608386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026233613472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026233617724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p> 发现有两个输出，为3和6。</p>
+<ul>
+<li>练习2: 将 line4和line9种寄存器dl 的值分别修改为 0~9 中任何一个数字，重新汇编→ 连接→运行，观察结果的变化。<br>将line 4 dl的值改为7，将line 9 dl的值改为4。因为截图有的重复，就不一一截取了。</li>
+<li>练习3：用debug对生成的可执行文件 t1.exe 进行调试。</li>
+</ul>
+<p>① 使用 r 命令查看。观察寄存器 cx 的值是 多少；观察寄存器 ds 和 cs 的值是多 少，它们之间是否满足关系(cs)=(ds)+10H? </p>
+<p>② PSP（程序段前缀）的头两个字节是CD 20, 用debug查看PSP的内容，验证是否 如此。</p>
+<p>③ 使用 u 命令对 t1.exe 进行反汇编，观察反汇编得到的源代码。</p>
+<p>④ 使用 t 命令和 p 命令（遇到 int 命令时，用 p 命令）单步调试，观察结果。 </p>
+<p><img src="https://img-blog.csdnimg.cn/20181026235125919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026235134453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181026235138520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol start="2">
+<li>改变：输出变成7和4。</li>
+<li>①如图可知：CX的值为0016，DS的值为075A，CS的值为076A，两者间关系满足(cs)=(ds)+10H。<br><img src="https://img-blog.csdnimg.cn/20181027000137639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20181027000146238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>  ②③④：用t或p命令逐条执行，每次执行p命令后都有输出值。</p>
+<h3 id="练习二："><a href="#练习二：" class="headerlink" title="练习二："></a>练习二：</h3><ul>
+<li><p>第1步，编写汇编源程序t2.asm，源程序代码如图所示。<br>line6-7 相当于 mov [0], 0433h<br>line9-10 相当于 mov [2], 0436h 至于为什么这样使用两条指令，而不直接简化写成上面的形式，有两个原因。其中一个是方便以后循环;另一个原因，留待第 5 章再解释说明。暂时，先这样使用。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181027130907481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>第 2 步，对源程序 t2.asm 进行汇编、连接、运行、调试<br>(1). 对 t2.asm 进行汇编、连接后，得到可执行文件 t2.exe。运行 t2.exe，观察程序运行结果，验证是否在屏幕左上方出现红色的数值 36。<br>注*)经测试，有些平台在 dosbox 下运行这个程序时有些问题，如果屏幕左上方没有输出结果，请运行程序 t2.exe 前，先输入 cls 命令清空一下屏幕，然后再执行 t2.exe。<br>(2). 如果(1)结果得到验证，重新打开t2.asm，尝试将源代码中line7的0433h→0432h, line10 的 0436h→0439h, 然后重新汇编、连接，得到可执行文件 t2.exe。使用 cls 命令清屏后，再次观察程序运行结果。<br>(3).  如果(1)结果得到验证，重新打开 t2.asm，尝试将源代码中 line7 的 0433h→0333h, line10 的 0436h→0336h, 然后重新汇编、连接，得到可执行文件 t2.exe。使用 cls 命令清 屏后，再次观察程序运行结果。</p>
+</li>
+</ul>
+<p> <img src="https://img-blog.csdnimg.cn/20181027133055399.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/2018102713310430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181027133113554.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181027133119418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181027133435702.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181027133442373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_27,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>emmm,可以看出来，随着指令代码的改变，相应的输出也发生了改变。</p>
+<ul>
+<li><p>延伸思考和分析<br>(1)把练习 2 和实验 1「实验任务(4)」，放到一起看，观察并思考这两个实验任务之间 的关联，结合实验 1「实验任务(4)」以及练习 2 中每行汇编指令的功能，理解练习 2 中程 序 t2.asm 实现的功能;<br>(2)把练习 2 和练习 1 放到一起看，结合两个程序各自的源代码以及运行结果，观察 并思考这两个程序在实现数值显示时不同的做法。 </p>
+</li>
+<li><p>思考：<br>（1）在程序t2.exe中，常数值中bh中存放的数据控制着输出的颜色，bl中存放的数据控制着输出的值。</p>
+<p>（2）   练习一和练习二输出的形式不同：一是用命令形式输出，二是在debug环境下用g命令显示器输出。</p>
+</li>
+</ul>
+<ol>
+<li><p>command，debug，t1.exe之间是什么关系？<br>command调用debug，debug调用t1；t1结束时返回到debug，debug结束时返回到command；command调用debug，debug调用t1；t1结束时返回到debug，debug结束时返回到command；</p>
+</li>
+<li><p>debug调试常用的命令?<br>t–执行当前命令，cs:ip指向下一条指令t–执行当前命令，cs:ip指向下一条指令<br>当遇到int 21指令时，用p执行，返回到debug<br>当debug使用完毕要退出回到command，使用q</p>
+</li>
+</ol>
+<ol start="4">
+<li> PSP的作用是什么？<br>DOS用来和程序进行通信，t1.exe在操作系统上编写并运行汇编程序的，操作系统管理着内存，它也管理着编译链接生成的汇编程序DOS用来和程序进行通信，t1.exe在操作系统上编写并运行汇编程序的，操作系统管理着内存，它也管理着编译链接生成的汇编程序</li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2019/03/12/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E5%9B%9B%20%E3%80%90bx%E3%80%91%E5%92%8Cloop%E7%9A%84%E4%BD%BF%E7%94%A8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">汇编实验四 【bx】和loop的使用</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2019/03/05/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">汇编实验二 用机器指令和汇编指令编程</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Skyen</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

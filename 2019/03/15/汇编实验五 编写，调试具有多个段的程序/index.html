@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Skyen">
+    
+    <title>
+        
+            汇编实验五 编写，调试具有多个段的程序 |
+        
+        Skyen&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/head.jpeg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Misaka.jpg","favicon":"/images/head.jpeg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/3.JPG","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Skyen's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Skyen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">汇编实验五 编写，调试具有多个段的程序</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Misaka.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Skyen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-03-15 15:30:16
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><strong>本章的主要内容主要是在讲代码段，数据段，栈段的使用。</strong></p>
+<h3 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h3><h4 id="将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。"><a href="#将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。" class="headerlink" title="将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。"></a>将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code, ds:data, ss:stack</span><br><span class="line"> </span><br><span class="line">data segment</span><br><span class="line">	dw 0123h, 0456h, 0789h, 0abch, 0defh, 0fedh, 0cbah, 0987h</span><br><span class="line">data ends</span><br><span class="line"> </span><br><span class="line">stack segment</span><br><span class="line">	dw 0, 0, 0, 0, 0, 0, 0, 0</span><br><span class="line">stack ends</span><br><span class="line"> </span><br><span class="line">code segment</span><br><span class="line">start:	mov ax, stack</span><br><span class="line">	mov ss, ax</span><br><span class="line">	mov sp, 16	;ss:sp stack</span><br><span class="line"> </span><br><span class="line">	mov ax, data</span><br><span class="line">	mov ds, ax	;ds data</span><br><span class="line"> </span><br><span class="line">	push ds:[0]</span><br><span class="line">	push ds:[2]</span><br><span class="line">	pop ds:[2]</span><br><span class="line">	pop ds:[0]</span><br><span class="line"> </span><br><span class="line">	mov ax, 4c00h</span><br><span class="line">	int 21h</span><br><span class="line"> </span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>cpu执行程序，程序返回前，data段中的数据是多少？</li>
+<li>cpu执行程序，程序返回前，cs=<strong>0042h</strong>, ss=<strong>076bh</strong>, ds=<strong>076ah</strong></li>
+<li>设程序加载后，code段的地址为X，则data段的地址 <strong>X-2</strong>，stack段为<strong>X-1</strong>。</li>
+</ul>
+<h4 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h4><p>先用r命令查看，可以看到cx寄存器中的值为42，然后用u命令进行反汇编，因为，代码段已经用start标注，所以可以直接使用u命令，当然，也可以算出代码段的长度之后再反汇编。（代码段长度为42-20=22h）<br>然后g命令，g 001D执行mov ax 4c00h之前的内容，最后用d命令查看内存中的内容，如图：<br><img src="https://img-blog.csdnimg.cn/20181123234958178.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2</h3><h4 id="将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。-1"><a href="#将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。-1" class="headerlink" title="将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。"></a>将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code, ds:data, ss:stack</span><br><span class="line"> </span><br><span class="line">data segment</span><br><span class="line">	dw 0123h, 0456h</span><br><span class="line">data ends</span><br><span class="line"> </span><br><span class="line">stack segment</span><br><span class="line">	dw 0, 0</span><br><span class="line">stack ends</span><br><span class="line"> </span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">	mov ax, stack</span><br><span class="line">	mov ss, ax</span><br><span class="line">	mov sp, 16	;ss:sp stack</span><br><span class="line"> </span><br><span class="line">	mov ax, data</span><br><span class="line">	mov ds, ax</span><br><span class="line"> </span><br><span class="line">	push ds:[0]</span><br><span class="line">	push ds:[2]</span><br><span class="line">	pop ds:[2]</span><br><span class="line">	pop ds:[0]</span><br><span class="line"> </span><br><span class="line">	mov ax, 4c00h</span><br><span class="line">	int 21h</span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<ul>
+<li>cpu执行程序，程序返回前，data段中的数据为多少？</li>
+<li>cpu执行程序，程序返回前，cs=<strong>076ch</strong>,ss=<strong>076bh</strong>,ds=<strong>076ah</strong>.</li>
+<li>设程序加载后，code段的短地址为x，则data段的短地址为<strong>x-2</strong>，stack段的短地址为<strong>x-1</strong>。</li>
+<li>对于如下定义的段：<br>name segment<br>…<br>name ends<br>如果段中的数据占N个字节，则程序加载后该段实际占有的空间为<strong>（[n/16]+1)*16</strong><h4 id="分析：-1"><a href="#分析：-1" class="headerlink" title="分析："></a>分析：</h4>有了实验1的基础，实验2的操作基本和实验1相同，相同的内容就不赘述了。最主要的不同应该就是定义的数据多少，可能就是要探索关于空间的使用问题。<br>不同的第四个问题，是的，我也不怎么看太明白，看着答案我先简单的推测一下，因为一个段的大小至少为16字节，最大为64k字节，计算地址时有段地址<em>16 的步骤，那么反过来，若段的数据有n字节，则程序加载后，该段实际占有的空间为（n/16+1）</em>16（n/16取整数部分）。<br>还是靠谱的百度一下：<br>详解：<blockquote>
+<p>以下的内容引用于 friendbkf的博客。<br>对于如下定义的段:<br> name segment<br> ….<br> name ends<br>如果段中的数据占N个字节，则程序加载后，该段实际占有的空间为_____.<br>答案：</p>
+<pre><code>  (N/16+1)*16 [说明：N/16只取整数部分]    或   （N＋15）/ 16 ，对16取整
+ 在8086CPU架构上，段是以paragraph(16-byte)对齐的。程序默认以16字节为边界对齐，所以不足16字节的部分数据也要填够16字节。“对齐”是alignment，这种填充叫做padding。16字节成一小段，称为节
+</code></pre>
+<p>一、这首先要从8086处理器寻址原理说起。</p>
+<pre><code>8086这种处理器有二十根地址线（20个用于寻址的管脚），可以使用的外部存储器空间可达1MB（00000H～FFFFFH）。 但是，8086内部的寄存器都是16位的，用任何一个寄存器（比如BX或SI），都无法直接寻址8086所支持的1M地址空间，因为16位寄存器只能表示640KB的空间范围（0000～FFFFH）。
+所以，Intel想了一个方法，设计出了CS/DS/ES/SS这几个段地址寄存器，用段地址寄存器与普通寄存器组合，来寻址1MB的地址范围，即：对于CPU取指来说，用CS:IP组合来寻址下一个要执行的指令（也在存储器中）；对于堆栈操作PUSH/POP来说，用SS:SP组合来表示当前栈指针（栈也在存储器中）；对于数据操作指令来说，用默认的DS/ES或指定的段地址（段前缀指令）与偏移量寄存器组合寻址。
+</code></pre>
+<p>组合后的实际地址＝段寄存器内容×16＋偏移量寄存器内容</p>
+<pre><code>从这个公式可以看到，每一个段的地址都对齐在16的倍数上。比如DS=1234H，则这个段就从 1234H×16＋0000H＝12340H开始，最大到1234H×16＋0FFFFH＝2233FH为止。   
+</code></pre>
+<p>二、对同一个内存地址，有不同的段:偏移量组合方法，比如2233FH这个地址，既可以表示为1234H:0FFFFH（在1234H段中），也可以表示为2233H:0000FH（在2233H段中）。<br>那么，如果汇编程序中有下面两个连续的段定义，汇编编译程序会怎么做呢？<br>name1 segment<br>d1 db 0<br>name1 ends<br>name2 segment<br>d2 db 0<br>name2 ends<br>　　编译程序可以将name1和name2编译成一个段，d1和d2在内存中连续存放，这样可以节省内存空间。比如编译程序以name1为基准，将name1作为一个段的起始，程序加载后会被放在xxxx0H的地方，那么d1就放在该段偏移地址为0字节的位置，d2就放在该段偏移为1字节的位置。<br>　　这样的处理方式虽然可能会节省一点内存空间，但是对于编译器的智能化要求太高了，它必须将源程序中所有引用到name2和d2的地方，全部调整为以name1段为基准，这实在是太难了，而且也节省不了几个字节的空间，编译器是不会干这种吃力不讨好的事的。</p>
+<pre><code>编译器实际的处理方式是将name1中的所有内容放在一个段的起始地址处，name2里的所有内容放在后续一个段的起始地址处（这也是汇编指令segment的本义：将不同数据分段）。这样，即使name1中只包含一个字节，也要占一个段（16个字节），所以，一个段实际占用的空间＝（段中字节数＋15）/ 16。
+</code></pre>
+<p>　　所以，8086处理器的内部寻址原理和汇编程序编译器共同决定了segment定义的段必须放在按16的倍数对准的段地址边界上，占用的空间也是16的倍数。</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20181124000724598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="实验3"><a href="#实验3" class="headerlink" title="实验3"></a>实验3</h3><h4 id="将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。-2"><a href="#将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。-2" class="headerlink" title="将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。"></a>将下面的程序编译，链接，用debug加载，跟踪，然后回答问题。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code, ds:data, ss:stack</span><br><span class="line"> </span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">	mov ax, stack</span><br><span class="line">	mov ss, ax</span><br><span class="line">	mov sp, 16	;ss:sp stack</span><br><span class="line"> </span><br><span class="line">	mov ax, data</span><br><span class="line">	mov ds, ax</span><br><span class="line"> </span><br><span class="line">	push ds:[0]</span><br><span class="line">	push ds:[2]</span><br><span class="line">	pop ds:[2]</span><br><span class="line">	pop ds:[0]</span><br><span class="line"> </span><br><span class="line">	mov ax, 4c00h</span><br><span class="line">	int 21h</span><br><span class="line"> </span><br><span class="line">	data segment</span><br><span class="line">	dw 0123h, 0456h</span><br><span class="line">	data ends</span><br><span class="line"> </span><br><span class="line">	stack segment</span><br><span class="line">		dw 0, 0</span><br><span class="line">	stack ends</span><br><span class="line"> </span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CPU执行程序，程序返回前，data段中的数据为多少？</li>
+<li>CPU执行程序，程序返回前，<strong>cs=076ch</strong>,ss=<strong>076eh__，ds=__076dh</strong>.</li>
+<li>设程序加载后，code段的短地址为x，则data段的短地址为__x+3__，stack段的短地址为__x+4__。</li>
+</ul>
+<h4 id="分析：-2"><a href="#分析：-2" class="headerlink" title="分析："></a>分析：</h4><p>操作几乎都和实验1，2一样，不赘述了。</p>
+<p><img src="https://img-blog.csdnimg.cn/20181124004237529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="实验4"><a href="#实验4" class="headerlink" title="实验4"></a>实验4</h3><h4 id="如果将（1），（2），（3）题中的最后一条伪指令end-start改为end（也就是说，不指明程序的入口个），则哪个程序仍然可以正确执行？请说明原因。"><a href="#如果将（1），（2），（3）题中的最后一条伪指令end-start改为end（也就是说，不指明程序的入口个），则哪个程序仍然可以正确执行？请说明原因。" class="headerlink" title="如果将（1），（2），（3）题中的最后一条伪指令end start改为end（也就是说，不指明程序的入口个），则哪个程序仍然可以正确执行？请说明原因。"></a>如果将（1），（2），（3）题中的最后一条伪指令end start改为end（也就是说，不指明程序的入口个），则哪个程序仍然可以正确执行？请说明原因。</h4><p>第三个程序仍然可以执行，因为不指明程序入口时，cs:code segment默认ip为0，第三个程序正好是程序开始的地方，前两个ip=0开始的地方存的是数据，解析为汇编指令是错误的。也就明白什么时候用end，什么时候用end start。</p>
+<h3 id="实验5"><a href="#实验5" class="headerlink" title="实验5"></a>实验5</h3><h4 id="程序如下，编写code段中的代码，用push指令将a段和b段中的数据依次相加，将结果存到c段中。"><a href="#程序如下，编写code段中的代码，用push指令将a段和b段中的数据依次相加，将结果存到c段中。" class="headerlink" title="程序如下，编写code段中的代码，用push指令将a段和b段中的数据依次相加，将结果存到c段中。"></a>程序如下，编写code段中的代码，用push指令将a段和b段中的数据依次相加，将结果存到c段中。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">a segment</span><br><span class="line">    db 1,2,3,4,5,6,7,8</span><br><span class="line">a ends                </span><br><span class="line"> </span><br><span class="line">b segment </span><br><span class="line">    db 1,2,3,4,5,6,7,8</span><br><span class="line">b ends</span><br><span class="line"> </span><br><span class="line">c segment</span><br><span class="line">    db 0,0,0,0,0,0,0,0</span><br><span class="line">c ends </span><br><span class="line"> </span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">     mov ax,a</span><br><span class="line">     mov ds,ax</span><br><span class="line"> </span><br><span class="line">     mov bx,0</span><br><span class="line">     mov cx,4</span><br><span class="line"> </span><br><span class="line">s:   mov dx,ds:[bx]</span><br><span class="line">     add dx,ds:[bx+16]</span><br><span class="line">     mov ds:[bx+32],dx</span><br><span class="line">     add bx,2</span><br><span class="line">     loop s</span><br><span class="line">     </span><br><span class="line">     mov ax,4c00h</span><br><span class="line">     int 21h</span><br><span class="line">     </span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h4 id="分析：-3"><a href="#分析：-3" class="headerlink" title="分析："></a>分析：</h4><p>思路：<br>将a段的数据先存在dx中，然后直接用b段数据相加，然后再将相加后的结果给c。<br>若a的段地址为x，则b的段地址为x+1，c的段地址为x+2。<br><img src="https://img-blog.csdnimg.cn/2018112401293069.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181124012935587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>很明显，相加成功了。<br>这里有一个问题，a b段的数据不是很大 ，相加之后还是小于255，所以不会溢出。如果溢出应该怎么解决呢?</p>
+<h3 id="实验6"><a href="#实验6" class="headerlink" title="实验6"></a>实验6</h3><h4 id="程序如下，编写code段中的代码，用push指令将a段中的前8个字型数据，逆序存储到b段中。"><a href="#程序如下，编写code段中的代码，用push指令将a段中的前8个字型数据，逆序存储到b段中。" class="headerlink" title="程序如下，编写code段中的代码，用push指令将a段中的前8个字型数据，逆序存储到b段中。"></a>程序如下，编写code段中的代码，用push指令将a段中的前8个字型数据，逆序存储到b段中。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">a segment</span><br><span class="line">    dw 1,2,3,4,5,6,7,8,9,0ah,0bh,0ch,0dh,0eh,0fh,0ffh</span><br><span class="line">a ends                </span><br><span class="line"> </span><br><span class="line">b segment </span><br><span class="line">    dw 0,0,0,0,0,0,0,0</span><br><span class="line">b ends</span><br><span class="line"> </span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">          mov ax,a</span><br><span class="line">          mov ds,ax</span><br><span class="line">          mov ax,b</span><br><span class="line">          mov ss,ax</span><br><span class="line">          mov sp,10h</span><br><span class="line">          mov bx,0</span><br><span class="line">          mov cx,8</span><br><span class="line">          </span><br><span class="line">s:        push ds:[bx]</span><br><span class="line">          add bx,2</span><br><span class="line">          loop s</span><br><span class="line">        </span><br><span class="line">          mov ax,4c00h</span><br><span class="line">          int 21h</span><br><span class="line">           </span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h4 id="分析：-4"><a href="#分析：-4" class="headerlink" title="分析："></a>分析：</h4><p>记得课上好像讲过类似的。<br><img src="https://img-blog.csdnimg.cn/20181124014754785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/2018112401480231.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>很明显，b的8个字单元为a段前8个字节的逆序。</p>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>dw 是定义的字型数据，每个数据16个位，两个字节。<br>db是定义的字节型数据，每个数据8位，一个字节。<br>段寄存器之间不能直接转移数据，需要通过al寄存器来中转。</p>
+<p>不得不说，本次耗费的时间比想像中要长很多。<br>希望下次不会这么慢了，还是多多练习吧。</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2019/03/30/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E5%85%AB%20%E5%88%86%E6%9E%90%E4%B8%80%E4%B8%AA%E5%A5%87%E6%80%AA%E7%9A%84%E7%A8%8B%E5%BA%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">汇编实验八 分析一个奇怪的程序</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2019/03/12/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E5%9B%9B%20%E3%80%90bx%E3%80%91%E5%92%8Cloop%E7%9A%84%E4%BD%BF%E7%94%A8/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">汇编实验四 【bx】和loop的使用</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Skyen</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

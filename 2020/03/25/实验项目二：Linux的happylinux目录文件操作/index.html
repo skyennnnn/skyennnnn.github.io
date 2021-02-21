@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Skyen">
+    
+    <title>
+        
+            实验项目二：Linux的happylinux目录文件操作 |
+        
+        Skyen&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/head.jpeg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Misaka.jpg","favicon":"/images/head.jpeg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/3.JPG","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Skyen's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Skyen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">实验项目二：Linux的happylinux目录文件操作</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Misaka.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Skyen</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-03-25 15:30:16
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><img src="https://img-blog.csdnimg.cn/20200220174223575.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="实验步骤："><a href="#实验步骤：" class="headerlink" title="实验步骤："></a>实验步骤：</h2><h4 id="1-root账号登录到终端，使用pwd命令查看当前目录。"><a href="#1-root账号登录到终端，使用pwd命令查看当前目录。" class="headerlink" title="1. root账号登录到终端，使用pwd命令查看当前目录。"></a>1. root账号登录到终端，使用pwd命令查看当前目录。</h4><p><img src="https://img-blog.csdnimg.cn/2020022020553887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>Linux下 pwd命令用于显示工作目录。</p>
+<h4 id="2-用cd命令将当前目录切换到“-”下："><a href="#2-用cd命令将当前目录切换到“-”下：" class="headerlink" title="2.用cd命令将当前目录切换到“/”下："></a>2.用cd命令将当前目录切换到“/”下：</h4><p>cd命令<br>命令格式：cd &lt;路径&gt;<br>意义：cd是change directory 的缩写；cd命令后面跟一个路径，用于切换当前用户所在的路径，其中路径可以是绝对路径也可以是相对路径。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200220205746311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="3-使用ls命令查看linux的目录结构，并能查看隐藏文件和文件类型大小。"><a href="#3-使用ls命令查看linux的目录结构，并能查看隐藏文件和文件类型大小。" class="headerlink" title="3.使用ls命令查看linux的目录结构，并能查看隐藏文件和文件类型大小。"></a>3.使用ls命令查看linux的目录结构，并能查看隐藏文件和文件类型大小。</h4><p>命令格式：ls &lt;参数&gt; &lt;路径&gt;<br>意义：ls是list的缩写；ls命令后面可以跟一个路径或参数，也可以不跟，表示列出路径或当前目录下的所有文件信息。最常用的的参数是“-l”，也就是“ls -l”命令。<br>ls / 显示根目录下的所有文件及文件夹。<br>ls -l / 显示/路径下的所有文件及文件夹的详细信息。<br>ls -l 显示当前路径下的所有文件及文件夹的详细信息。<br>ls –a  目前该目录下的所有文件及文件夹（包括隐藏文件）<br>ls –all 显示了目前该目录下的所有文件及文件夹（包括隐藏文件），而且还显示了每一个文件及文件夹的属性、所有者、创建时间、大小等等信息。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200220205826967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200220205835995.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="4-创建happylinux目录在-tmp目录下。"><a href="#4-创建happylinux目录在-tmp目录下。" class="headerlink" title="4. 创建happylinux目录在/tmp目录下。"></a>4. 创建happylinux目录在/tmp目录下。</h4><p>首先切换到/tmp目录下，然后用mkdir命令创建新目录。<br><img src="https://img-blog.csdnimg.cn/20200220205912270.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="5-用一条命令使用cp命令将root目录下三个文件拷贝到tmp目录下的happylinux目录下。"><a href="#5-用一条命令使用cp命令将root目录下三个文件拷贝到tmp目录下的happylinux目录下。" class="headerlink" title="5.用一条命令使用cp命令将root目录下三个文件拷贝到tmp目录下的happylinux目录下。"></a>5.用一条命令使用cp命令将root目录下三个文件拷贝到tmp目录下的happylinux目录下。</h4><p>首先，查看tmp目录下的happylinux目录下是否有文件，经确认，没有文件。<br>然后，用cd命令切换到root目录下，用cp命令将所需要的文件复制过去。<br>最后，查看tmp目录下的happylinux目录下是否存在想要复制的文件，的确存在，复制完成。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200220210002192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="6-使用cat命令查看happylinux下install-org文件内容并加入行号显示。"><a href="#6-使用cat命令查看happylinux下install-org文件内容并加入行号显示。" class="headerlink" title="6.使用cat命令查看happylinux下install.org文件内容并加入行号显示。"></a>6.使用cat命令查看happylinux下install.org文件内容并加入行号显示。</h4><p><img src="https://img-blog.csdnimg.cn/20200220210033487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200220210041888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="7-使用less命令查看install-log并搜索关键字i686并查看下一个匹配项并退出。"><a href="#7-使用less命令查看install-log并搜索关键字i686并查看下一个匹配项并退出。" class="headerlink" title="7.使用less命令查看install.log并搜索关键字i686并查看下一个匹配项并退出。"></a>7.使用less命令查看install.log并搜索关键字i686并查看下一个匹配项并退出。</h4><p><img src="https://img-blog.csdnimg.cn/20200221143214137.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200221143200727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>输入/i686 查找关键字，字母键n可以查看下一个匹配项，字母q退出。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200221143258718.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="8-并对root目录下的anaconda-ks-cfg查看文件信息并人性化查看文件大小显示大小为1-2kb。"><a href="#8-并对root目录下的anaconda-ks-cfg查看文件信息并人性化查看文件大小显示大小为1-2kb。" class="headerlink" title="8.并对root目录下的anaconda-ks.cfg查看文件信息并人性化查看文件大小显示大小为1.2kb。"></a>8.并对root目录下的anaconda-ks.cfg查看文件信息并人性化查看文件大小显示大小为1.2kb。</h4><p>cd切换回到root目录下，人性化查看 -lh</p>
+<p><img src="https://img-blog.csdnimg.cn/20200221143324187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="9-更改happylinux目录名称为linuxhappy。"><a href="#9-更改happylinux目录名称为linuxhappy。" class="headerlink" title="9.更改happylinux目录名称为linuxhappy。"></a>9.更改happylinux目录名称为linuxhappy。</h4><p><img src="https://img-blog.csdnimg.cn/20200221143331820.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="10-删除所有linuxhappy目录下所有文件并没有任何提示信息。"><a href="#10-删除所有linuxhappy目录下所有文件并没有任何提示信息。" class="headerlink" title="10.删除所有linuxhappy目录下所有文件并没有任何提示信息。"></a>10.删除所有linuxhappy目录下所有文件并没有任何提示信息。</h4><ol>
+<li>如果连同linuxhappy目录一同删除<br><img src="https://img-blog.csdnimg.cn/20200221143437958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<ol start="2">
+<li>如果仅删除目录下的文件，但保留目录<br>可以切换到linuxhappy目录下，直接用rm -rf *</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200221143513979.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="11-查看下目录位置（路径）。"><a href="#11-查看下目录位置（路径）。" class="headerlink" title="11.查看下目录位置（路径）。"></a>11.查看下目录位置（路径）。</h4><p>查看linuxhappy文件的位置：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200221143546719.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="12-使用命令现在关闭linux系统。"><a href="#12-使用命令现在关闭linux系统。" class="headerlink" title="12.使用命令现在关闭linux系统。"></a>12.使用命令现在关闭linux系统。</h4><p><img src="https://img-blog.csdnimg.cn/20200221143529515.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200221143537380.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>成功关闭系统。</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/03/30/%E5%AE%9E%E9%AA%8C%E9%A1%B9%E7%9B%AE%E4%B8%89%EF%BC%9ALinux%E5%91%BD%E4%BB%A4%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%8F%8A%E6%90%9C%E7%B4%A2/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">实验项目三：Linux命令权限管理及搜索</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/03/20/%E5%AE%9E%E9%AA%8C%E9%A1%B9%E7%9B%AE%E4%B8%80%EF%BC%9ALinux%E7%9A%84%E5%AE%89%E8%A3%85/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">实验项目一：Linux的安装</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Skyen</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
