@@ -9,7 +9,7 @@
     
     <title>
         
-            LintCode—第一个只出现一次的字符 |
+            LeetCode--766.托普利茨矩阵 |
         
         Skyen&#39;s Blog
     </title>
@@ -161,7 +161,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">LintCode—第一个只出现一次的字符</span>
+            <span class="title-hover-animation">LeetCode--766.托普利茨矩阵</span>
         </div>
 
         
@@ -179,7 +179,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2020-10-17 15:30:16
+        <i class="fas fa-edit"></i>&nbsp;2021-02-22 12:08:07
     </span>
     
         <span class="article-categories article-meta-item">
@@ -199,11 +199,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/LintCode/">LintCode</a>&nbsp;
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                        | <a href="/tags/LeetCode/">LeetCode</a>&nbsp;
                     </li>
                 
             </ul>
@@ -222,16 +222,23 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h2><h3 id="209-第一个只出现一次的字符"><a href="#209-第一个只出现一次的字符" class="headerlink" title="209.第一个只出现一次的字符"></a>209.第一个只出现一次的字符</h3><p>给出一个字符串，找出第一个只出现一次的字符。</p>
-<p>样例<br>样例 1:<br>    输入: “abaccdeff”<br>    输出:  ‘b’</p>
-<pre><code>解释:
-&#39;b&#39; 是第一个出现一次的字符
-</code></pre>
-<p>样例 2:<br>    输入: “aabccd”<br>    输出:  ‘b’</p>
-<pre><code>解释:
-&#39;b&#39; 是第一个出现一次的字符
-</code></pre>
-<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @param str: str: the given string</span></span><br><span class="line"><span class="comment">     * @return: char: the first unique character in a given string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">char</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> &amp;str)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Write your code here</span></span><br><span class="line">        <span class="keyword">int</span> len = str.size();</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            <span class="comment">/* code */</span> </span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;len;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(str[i]==str[j])</span><br><span class="line">                    sum ++;</span><br><span class="line">                <span class="keyword">if</span>(sum&gt;<span class="number">1</span>) </span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> str[i];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>给你一个 m x n 的矩阵 matrix 。如果这个矩阵是托普利茨矩阵，返回 true ；否则，返回 false 。</p>
+<p>如果矩阵上每一条由左上到右下的对角线上的元素都相同，那么这个矩阵是<strong>托普利茨矩阵</strong> 。</p>
+<blockquote>
+<p>示例 1：<br><img src="https://img-blog.csdnimg.cn/20210222121213355.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<blockquote>
+<p>输入：matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]] 输出：true 解释： 在上述矩阵中, 其对角线为:<br>“[9]”, “[5, 5]”, “[1, 1, 1]”, “[2, 2, 2]”, “[3, 3]”, “[4]”。<br>各条对角线上的所有元素均相同, 因此答案是 True 。</p>
+</blockquote>
+<blockquote>
+<p>示例 2：<br><img src="https://img-blog.csdnimg.cn/20210222121213353.jpg" alt="在这里插入图片描述"></p>
+<p>输入：matrix = [[1,2],[2,2]] 输出：false 解释： 对角线 “[1, 2]” 上的元素不同。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">提示：</span><br><span class="line"></span><br><span class="line">m &#x3D;&#x3D; matrix.length</span><br><span class="line">n &#x3D;&#x3D; matrix[i].length</span><br><span class="line">1 &lt;&#x3D; m, n &lt;&#x3D; 20</span><br><span class="line">0 &lt;&#x3D; matrix[i][j] &lt;&#x3D; 99</span><br></pre></td></tr></table></figure>
+<p>进阶：</p>
+<p>如果矩阵存储在磁盘上，并且内存有限，以至于一次最多只能将矩阵的一行加载到内存中，该怎么办？<br>如果矩阵太大，以至于一次只能将不完整的一行加载到内存中，该怎么办？</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isToeplitzMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> flag =<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> m = matrix.size();</span><br><span class="line">        <span class="keyword">int</span> n = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">1</span> &amp;&amp; n == <span class="number">1</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">1</span>&amp;&amp; n == <span class="number">0</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//如果矩阵没有对角线则都是符合要求的</span></span><br><span class="line">        <span class="keyword">if</span>((m == <span class="number">1</span> &amp;&amp; n &gt; <span class="number">1</span>) || (m &gt; <span class="number">1</span> &amp;&amp; n == <span class="number">1</span>)) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j] != matrix[i<span class="number">-1</span>][j<span class="number">-1</span>])&#123;</span><br><span class="line">                    flag=<span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -240,29 +247,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/02/22/LeetCode-766-%E6%89%98%E6%99%AE%E5%88%A9%E8%8C%A8%E7%9F%A9%E9%98%B5/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">LeetCode--766.托普利茨矩阵</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/10/16/LintCode%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE/"
+                           href="/2020/10/17/LintCode%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LintCode—字符串查找</span>
+                                <span class="post-nav-title-item">LintCode—第一个只出现一次的字符</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -371,7 +363,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">题目要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#209-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">209.第一个只出现一次的字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol>
     </div>
 </div>
         </aside>
