@@ -9,7 +9,7 @@
     
     <title>
         
-            LeetCode--766.托普利茨矩阵 |
+            LeetCode--1052.爱生气的书店老板 |
         
         Skyen&#39;s Blog
     </title>
@@ -161,7 +161,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">LeetCode--766.托普利茨矩阵</span>
+            <span class="title-hover-animation">LeetCode--1052.爱生气的书店老板</span>
         </div>
 
         
@@ -179,7 +179,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-22 12:08:07
+        <i class="fas fa-edit"></i>&nbsp;2021-02-23 16:25:45
     </span>
     
         <span class="article-categories article-meta-item">
@@ -222,24 +222,25 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>给你一个 m x n 的矩阵 matrix 。如果这个矩阵是托普利茨矩阵，返回 true ；否则，返回 false 。</p>
-<p>如果矩阵上每一条由左上到右下的对角线上的元素都相同，那么这个矩阵是<strong>托普利茨矩阵</strong> 。</p>
+            <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>今天，书店老板有一家店打算试营业 customers.length 分钟。每分钟都有一些顾客（customers[i]）会进入书店，所有这些顾客都会在那一分钟结束后离开。</p>
+<p>在某些时候，书店老板会生气。 如果书店老板在第 i 分钟生气，那么 grumpy[i] = 1，否则 grumpy[i] = 0。 当书店老板生气时，那一分钟的顾客就会不满意，不生气则他们是满意的。</p>
+<p>书店老板知道一个秘密技巧，能抑制自己的情绪，可以让自己连续 X 分钟不生气，但却只能使用一次。</p>
+<p>请你返回这一天营业下来，最多有多少客户能够感到满意的数量。</p>
 <blockquote>
-<p>示例 1：<br><img src="https://img-blog.csdnimg.cn/20210222121213355.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>示例：</p>
+<p>输入：customers = [1,0,1,2,1,1,7,5], grumpy = [0,1,0,1,0,1,0,1], X = 3<br>输出：16 解释： 书店老板在最后 3 分钟保持冷静。 感到满意的最大客户数量 = 1 + 1 + 1 + 1 + 7 + 5 = 16.</p>
 </blockquote>
 <blockquote>
-<p>输入：matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]] 输出：true 解释： 在上述矩阵中, 其对角线为:<br>“[9]”, “[5, 5]”, “[1, 1, 1]”, “[2, 2, 2]”, “[3, 3]”, “[4]”。<br>各条对角线上的所有元素均相同, 因此答案是 True 。</p>
+<p>提示：</p>
+<p>1 &lt;= X &lt;= customers.length == grumpy.length &lt;= 20000 0 &lt;= customers[i]<br>&lt;= 1000 0 &lt;= grumpy[i] &lt;= 1</p>
 </blockquote>
-<blockquote>
-<p>示例 2：<br><img src="https://img-blog.csdnimg.cn/20210222121213353.jpg" alt="在这里插入图片描述"></p>
-<p>输入：matrix = [[1,2],[2,2]] 输出：false 解释： 对角线 “[1, 2]” 上的元素不同。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">提示：</span><br><span class="line"></span><br><span class="line">m &#x3D;&#x3D; matrix.length</span><br><span class="line">n &#x3D;&#x3D; matrix[i].length</span><br><span class="line">1 &lt;&#x3D; m, n &lt;&#x3D; 20</span><br><span class="line">0 &lt;&#x3D; matrix[i][j] &lt;&#x3D; 99</span><br></pre></td></tr></table></figure>
-<p>进阶：</p>
-<p>如果矩阵存储在磁盘上，并且内存有限，以至于一次最多只能将矩阵的一行加载到内存中，该怎么办？<br>如果矩阵太大，以至于一次只能将不完整的一行加载到内存中，该怎么办？</p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isToeplitzMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> flag =<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> m = matrix.size();</span><br><span class="line">        <span class="keyword">int</span> n = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">1</span> &amp;&amp; n == <span class="number">1</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(m == <span class="number">1</span>&amp;&amp; n == <span class="number">0</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//如果矩阵没有对角线则都是符合要求的</span></span><br><span class="line">        <span class="keyword">if</span>((m == <span class="number">1</span> &amp;&amp; n &gt; <span class="number">1</span>) || (m &gt; <span class="number">1</span> &amp;&amp; n == <span class="number">1</span>)) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j] != matrix[i<span class="number">-1</span>][j<span class="number">-1</span>])&#123;</span><br><span class="line">                    flag=<span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ul>
+<li>先求出老板不生气时候的顾客总数 然后遍历一次customer，i &lt; X就是刚开始取前 X 个大小的窗口先计算，然后接下来每次移动一个单位</li>
+<li>每次窗口的计算可以基于上一个窗口的结果来计算 窗口右移，左边窗口出去一个元素，右边窗口进入一个元素</li>
+<li>对于出窗口的元素，我们要判断在此时老板是否生气grumpy[i-X] == 1，因为只有生气的话，我们出窗口时候才需要减去他，如果不生气的话，就不用减去了</li>
+<li>对于进入窗口的元素，我们也要判断是否老板生气grumpy[i] == 1，只有生气我们才需要加上此时的顾客temp += customers[i]; 最后的结果就是所有窗口中最大值的那个</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSatisfied</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; grumpy, <span class="keyword">int</span> X)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> time = customers.size();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>,max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;time;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(grumpy[i]==<span class="number">0</span>)&#123;  </span><br><span class="line">                count += customers[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        max = count;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;time;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;X)&#123;</span><br><span class="line">                <span class="keyword">if</span>(grumpy[i]==<span class="number">1</span>)&#123;</span><br><span class="line">                    count += customers[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(grumpy[i-X]==<span class="number">1</span>)&#123;</span><br><span class="line">                    count -= customers[i-X];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(grumpy[i]==<span class="number">1</span>)&#123;</span><br><span class="line">                    count += customers[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(max&lt;count)  max=count;    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -247,29 +248,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/02/23/LeetCode--1052.%E7%88%B1%E7%94%9F%E6%B0%94%E7%9A%84%E4%B9%A6%E5%BA%97%E8%80%81%E6%9D%BF/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">LeetCode--1052.爱生气的书店老板</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/10/17/LintCode%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/"
+                           href="/2021/02/22/LeetCode-766-%E6%89%98%E6%99%AE%E5%88%A9%E8%8C%A8%E7%9F%A9%E9%98%B5/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LintCode—第一个只出现一次的字符</span>
+                                <span class="post-nav-title-item">LeetCode--766.托普利茨矩阵</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
