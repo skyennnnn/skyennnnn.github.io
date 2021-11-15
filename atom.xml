@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-11-14T09:10:11.510Z</updated>
+  <updated>2021-11-15T13:14:42.283Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode--977.有序数组的平方</title>
+    <link href="http://example.com/2021/11/15/LeetCode--977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/"/>
+    <id>http://example.com/2021/11/15/LeetCode--977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</id>
+    <published>2021-11-15T12:52:02.000Z</published>
+    <updated>2021-11-15T13:14:42.283Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><p>给你一个按  <strong>非递减顺序</strong> 排序的整数数组 <strong>nums</strong>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p><blockquote><p>示例 1：</p><p>输入：nums = [-4,-1,0,3,10]<br>输出：[0,1,9,16,100]<br>解释：平方后，数组变为 [16,1,0,9,100]<br>排序后，数组变为 [0,1,9,16,100]</p></blockquote><blockquote><p>示例 2：</p><p>输入：nums = [-7,-3,2,3,11]<br>输出：[4,9,9,49,121]</p></blockquote><blockquote><p>提示：</p><p>1 &lt;= nums.length &lt;= 10^4<br>-10^4 &lt;= nums[i] &lt;= 10^4<br>nums 已按 非递减顺序 排序</p></blockquote><p>进阶：</p><p>请你设计时间复杂度为 O(n) 的算法解决本问题。</p><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>这道题的关键其实就是对数组中的数字的绝对值进行排序，然后再依次返回数据的平方即可。</p><p>因为数据是按照非递减顺序进行排列，那我们可以从两侧开始遍历，直接比对绝对值大小，将数据更大的一项，直接push进新数组中，最后得到的是由大到小的倒序排列，最后再reverse倒装一下顺序即可。</p><p>代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sortedSquares = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> total = nums.length;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>, right = total - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> result = [];</span><br><span class="line">    <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">        <span class="keyword">let</span> absleft = <span class="built_in">Math</span>.abs(nums[left]);</span><br><span class="line">        <span class="keyword">let</span> absright = <span class="built_in">Math</span>.abs(nums[right]);</span><br><span class="line">        <span class="keyword">if</span>(absleft &gt; absright)&#123;</span><br><span class="line">            result.push(absleft *absleft);</span><br><span class="line">            left ++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            result.push(absright *absright);</span><br><span class="line">            right --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.reverse();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h1&gt;&lt;p&gt;给你一个按  &lt;strong&gt;非递减顺序&lt;/strong&gt; 排序的整</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode--278. 第一个错误的版本 &amp;&amp; 35. 搜索插入位置</title>
@@ -524,34 +550,6 @@
     <category term="大数据" scheme="http://example.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     <category term="实验" scheme="http://example.com/tags/%E5%AE%9E%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac os上配置PD虚拟机，使其共享网络访问公网</title>
-    <link href="http://example.com/2019/10/16/Mac%20os%E4%B8%8A%E9%85%8D%E7%BD%AEPD%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%85%B1%E4%BA%AB%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE%E5%85%AC%E7%BD%91/"/>
-    <id>http://example.com/2019/10/16/Mac%20os%E4%B8%8A%E9%85%8D%E7%BD%AEPD%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%8C%E4%BD%BF%E5%85%B6%E5%85%B1%E4%BA%AB%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE%E5%85%AC%E7%BD%91/</id>
-    <published>2019-10-16T07:30:16.000Z</published>
-    <updated>2021-02-21T14:43:12.259Z</updated>
-    
-    <content type="html"><![CDATA[<p>Pd(Paralles Desktop)是Mac下非常好用的虚拟机软件，速度非常快。pd之所以比较快，是因为它采用了半虚拟化的方式，</p><p>从网卡类型处可以见一些端倪，下图中的virtio，很强大就对了。</p><p><img src="https://img-blog.csdnimg.cn/20200220185448789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="虚拟化"></p><p>声明：以下描述中，虚拟机指在pd中所安装的虚拟机，如cent os等linux发行版。<br>需求：</p><ol><li>给虚拟机配置表态ip，如192.168.6.10/24。</li><li>无论mac是否已经连接外网，在mac上都可直接连接到虚拟机的内网地址。</li><li>当mac连接到外网时，虚拟机也可以连接到外网。</li></ol><p><img src="https://img-blog.csdnimg.cn/20200220185636358.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="简单结构"></p><p>安装pd之后，会在mac中增加一个虚拟网卡，这个是pd用于把虚拟机和宿主系统如mac互联的网络接口，相当于虚拟机和宿主系统之间的一个交换机，如下所示。</p><p><img src="https://img-blog.csdnimg.cn/20200220190002733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图一"></p><p>也可以在终端使用命令行来查看。</p><p><img src="https://img-blog.csdnimg.cn/20200220190116597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图二"></p><p>vnic0中的vnic是指virtual net interface card，即虚拟网络接口，后面的0对应的是图一左上角虚拟网卡中的#0,即蓝色部分，它表示pd安装的第0块网卡。</p><p>以上两个图中显示的是同一块刚卡，因此ip都是192.168.6.2。这个并不是我在图一中的“ip address”中配置的，它是在pd中配置的。</p><p>可以打开pd的偏好设置里面进行相关设置。</p><p><img src="https://img-blog.csdnimg.cn/20200220191110707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图三"></p><p>图三中配置的是shared模式，即让我们的虚拟机与mac共享外网，红色框框中的enable ipv4 dhcp是用来打开内置的dhcp服务，熟悉nat模式的同学都知道，这就是让虚拟机通过nat模式上网的方式。下面蓝色框框中的start address等三个输入框是用来确认dhcp的地址池，即虚拟机采用dhcp方式可自动获取的ip地址的范围。</p><p>如果用dhcp获取ip的话，虚拟机中的ip地址就不固定，也许下次开机时就换了个新的ip，那么每次都要去查看下新的ip才能连接到虚拟机。因此我需要把虚拟机设置为固定ip，即静态ip，所以没有勾选enable ipv4 dhcp，也就是说要手动配置ip，需要填写地址池，因为这是在借助nat的方式，虚拟机中所配置的ip地址必须要属于此ip地址范围，而且这不仅是为了配置虚拟机的ip范围，还要给pd在宿主机上的虚拟网卡vnic0分配地址。</p><p>之后，确认一下配置，如图四所示。</p><p><img src="https://img-blog.csdnimg.cn/20200220192157754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图四"></p><p>将网卡network1（我只配置了一块，具体以大家实际需求为准）的source源选择为Shared Network，也就是将虚拟机的网卡绑定到此Shared Network，Shared Network就是上面图四中的连接方式Shared，这样虚拟机便可与mac共享网络。</p><p>还没完，还需要配置虚拟机的ip。</p><p>启动虚拟机后，进入网卡文件的配置目录，用vim编辑网卡配置文件,我这里的网卡配置文件是ifcfg-eth0,具体以大家实际的为主。如图五所示。</p><p>使用的命令是 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200220192901792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图五"></p><p>图中的bootproto采用的是static，表示静态，也可以写成none，大小写均可。接下来的是手动配置的ip，主要注意的是GATEWAY网关，这里配置的是192.168.6.1，并不是图一或图二中的192.168.6.2，因为我们并不是把mac当成Ip数据报文转发路由器（如同vmware中使用仅主机模式共享网络，然后虚拟机把网关指向vmware所共享的网卡ip），而是当成nat路由器，当采用nat方式为虚拟机提供网络服务时，pd会单独为虚拟机生成一个网关地址，这通常是地址池中的第1个ip,如图三中的起始地址，而图二中vnic0的地址是地址池中的第2个ip，即192.168.6.2。</p><p>编辑完文件后，重启网络，我的虚拟机是centOs6.3，执行的命令是<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure></p><p><img src="https://img-blog.csdnimg.cn/20200220193035934.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图六"></p><p>如图六所显示，配置成功。</p><p>我们在网卡配置文件中已经设置好了GATEWAY是192.168.6.1，这是虚拟机上网的关键，可以用ip r命令验证一下路由表，如图七所示。</p><p><img src="https://img-blog.csdnimg.cn/20200220193203787.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图七"></p><p>如果mac的外网是通的，现在可以在虚拟机中用ping命令测试下网络了，如图八所示，网是通的。</p><p><img src="https://img-blog.csdnimg.cn/20200220193310553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图八"><br>ping自己的mac主机也可以，如图九所示。</p><p><img src="https://img-blog.csdnimg.cn/20200220193440144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图九"></p><p>接下来在mac上直接访问虚拟机试试看，这里用ssh连接虚拟机的ip地址192.168.6.10,如图十所示，通了。</p><p><img src="https://img-blog.csdnimg.cn/20200220193558741.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ5MTYyMg==,size_16,color_FFFFFF,t_70" alt="图十"></p><p>自此便实现了mac通过内网连接虚拟机，虚拟机又可以通公（外）网。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Pd(Paralles Desktop)是Mac下非常好用的虚拟机软件，速度非常快。pd之所以比较快，是因为它采用了半虚拟化的方式，&lt;/p&gt;
-&lt;p&gt;从网卡类型处可以见一些端倪，下图中的virtio，很强大就对了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img-b</summary>
-      
-    
-    
-    
-    <category term="实验" scheme="http://example.com/categories/%E5%AE%9E%E9%AA%8C/"/>
-    
-    
-    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
-    
-    <category term="虚拟机" scheme="http://example.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
