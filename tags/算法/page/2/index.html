@@ -9,7 +9,7 @@
     
     <title>
         
-            汇编实验八 分析一个奇怪的程序 |
+            Tag: 算法 |
         
         Skyen&#39;s Blog
     </title>
@@ -81,7 +81,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/tags"
                             >
                                 TAGS
@@ -133,7 +133,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/tags">TAGS</a>
                 </li>
             
@@ -158,146 +158,46 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">汇编实验八 分析一个奇怪的程序</span>
+    <div class="tag-container">
+        <div class="tag-name"><i class="fas fa-tag"></i>&nbsp;算法
         </div>
-
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/Misaka.jpg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">Skyen</span>
-                        
-                            <span class="author-label">Lv4</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2019-03-30 15:30:16
-    </span>
+        <div class="tag-post-list">
+            
+<div class="archive-list-container">
     
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2020</span>
+                <span class="archive-year-post-count">[1]</span>
+            </div>
+            <ul class="article-list">
                 
-                    <li>
-                        <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2020/10/15/LintCode%E2%80%94%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C&%E8%90%BD%E5%8D%95%E7%9A%84%E6%95%B0/"
+                        >LintCode—两数之和&amp;落单的数</a>
+                        <span class="article-date">10-15</span>
                     </li>
                 
             </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/%E5%AE%9E%E9%AA%8C/">实验</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-    
+        </section>
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
-
-        <div class="article-content markdown-body">
-            <p>分析程序，在运行前思考：这个程序是否能够正确返回？<br>运行之后再思考：为什么是这种结果？<br>通过这个程序加深对相关内容的理解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">assueme cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">        mov ax,4c00h</span><br><span class="line">        int 21h</span><br><span class="line">start:  mov ax,0</span><br><span class="line">    s:  nop</span><br><span class="line">        nop</span><br><span class="line"></span><br><span class="line">        mov di,offset s</span><br><span class="line">        mov si,offset s2</span><br><span class="line">        mov ax,cs:[si]</span><br><span class="line">        mov cs:[di],ax</span><br><span class="line"></span><br><span class="line">    s0: jmp short s</span><br><span class="line"></span><br><span class="line">    s1: mov ax,0</span><br><span class="line">        int 21h</span><br><span class="line">        mov ax,0</span><br><span class="line"></span><br><span class="line">    s2: jmp short s1</span><br><span class="line">        nop</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-<p>分析：</p>
-<pre><code>start: mov ax,0
-    s: nop  ; nop标号语句，在运行时在代码段中分配一个字节的空间，
-       nop  ; 这个字节（空间）的值为90h。
-        
-            ; 操作符 `offset` 的功能是取得标号的偏移地址。
-       mov di,offset s   ;将 s 的偏移地址存到 di 寄存器中
-       mov si,offset s2  ;将 s2 的偏移地址存到 si 寄存器中
-       mov ax,cs:[si]    ;此行是将cs:[si]内存中的机器码存到ax寄存器中
-                         ;这个机器码是由编译器将s2标号字段中的指令编译而成
-       mov cs:[di],ax    ;将ax中的s2标号字段的机器码存放到s标号字段中
-   s0: jmp short s       ;跳转到 s 标号字段处执行代码。
-
-   s:  jmp short s1 ; 根据我们之前的分析, 指令是用相对偏移来表示的
-    ; 因此执行的操作并不是真的跳转到 s1 这个标号, 
-    ; 而是跳转编译时确定的 该指令到 s1 标号的偏移量。
-    ; 所以我们要分析接下来程序的流程的话 , 就必须先编译程序 , 
-    ; 通过查看这条指令的机器代码，才知道偏移量是多少。
-    ; 然后再根据这个偏移量确定程序下一步应该执行哪里的指令。
-    ; 根据下图的编译结果 , 可以发现 , 
-    ; jmp short s1 在编译后得到的指令是 : EB F6
-    ; 由上可知，偏移量是 :F6 
-    ; 偏移量是由 补码 来表示的，由书中 附注二 ，
-    ; 我们可以算出 F6对应的有符号十进制数为 -10。
-    ; 从这里，我们可以知道，这条指令是将 ip 的值加上 -10。
-    ; 那么，我们再看看 ip - 10 指向的地址是哪里呢 ? 
-    ; 由下图的编译结果，我们可以知道，
-    ; 它指向的刚好就是 code segment 开始的位置.
-    mov ax,4c00h
-    int 21h      ;看到这两句，大家就知道，程序是可以正常返回了
-</code></pre>
-
         </div>
+    </div>
 
-        
+    <div class="tag-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/tags/%E7%AE%97%E6%B3%95/"
+        >Prev</a>
+    
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2019/04/01/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%9D%20%E6%A0%B9%E6%8D%AE%E6%9D%90%E6%96%99%E7%BC%96%E7%A8%8B/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">汇编实验九 根据材料编程</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2019/03/15/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%BA%94%20%E7%BC%96%E5%86%99%EF%BC%8C%E8%B0%83%E8%AF%95%E5%85%B7%E6%9C%89%E5%A4%9A%E4%B8%AA%E6%AE%B5%E7%9A%84%E7%A8%8B%E5%BA%8F/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">汇编实验五 编写，调试具有多个段的程序</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+    
+</div>
 
-        
     </div>
 </div>
 
@@ -327,23 +227,6 @@
         </div>
     </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -390,14 +273,6 @@
 
     </div>
 
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        
-    </div>
-</div>
-        </aside>
     
 
     <div class="image-viewer-container">
@@ -453,8 +328,6 @@
 
 
 <div class="post-scripts">
-    
-        <script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script>
     
 </div>
 

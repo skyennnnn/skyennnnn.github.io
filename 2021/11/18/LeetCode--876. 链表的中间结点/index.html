@@ -9,7 +9,7 @@
     
     <title>
         
-            LeetCode--344.反转字符串 &amp;&amp; 557. 反转字符串中的单词 III |
+            LeetCode--876. 链表的中间结点 &amp;&amp; 19. 删除链表的倒数第 N 个结点 |
         
         Skyen&#39;s Blog
     </title>
@@ -161,7 +161,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">LeetCode--344.反转字符串 &amp;&amp; 557. 反转字符串中的单词 III</span>
+            <span class="title-hover-animation">LeetCode--876. 链表的中间结点 &amp;&amp; 19. 删除链表的倒数第 N 个结点</span>
         </div>
 
         
@@ -179,7 +179,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-17 21:28:42
+        <i class="fas fa-edit"></i>&nbsp;2021-11-18 20:35:50
     </span>
     
         <span class="article-categories article-meta-item">
@@ -222,36 +222,48 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="Description（344-反转字符串）"><a href="#Description（344-反转字符串）" class="headerlink" title="Description（344.反转字符串）"></a>Description（344.反转字符串）</h1><p>编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。</p>
-<p>不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。</p>
+            <h1 id="Description（876-链表的中间结点）"><a href="#Description（876-链表的中间结点）" class="headerlink" title="Description（876. 链表的中间结点）"></a>Description（876. 链表的中间结点）</h1><p>给定一个头结点为 head 的非空单链表，返回链表的中间结点。</p>
+<p>如果有两个中间结点，则返回第二个中间结点。</p>
 <blockquote>
 <p>示例 1：</p>
-<p>输入：s = [“h”,”e”,”l”,”l”,”o”]<br>输出：[“o”,”l”,”l”,”e”,”h”]</p>
+<p>输入：[1,2,3,4,5]<br>输出：此列表中的结点 3 (序列化形式：[3,4,5])<br>返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。<br>注意，我们返回了一个 ListNode 类型的对象 ans，这样：<br>ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL.</p>
 </blockquote>
 <blockquote>
 <p>示例 2：</p>
-<p>输入：s = [“H”,”a”,”n”,”n”,”a”,”h”]<br>输出：[“h”,”a”,”n”,”n”,”a”,”H”]</p>
+<p>输入：[1,2,3,4,5,6]<br>输出：此列表中的结点 4 (序列化形式：[4,5,6])<br>由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。</p>
 </blockquote>
 <blockquote>
 <p>提示：</p>
-<p>1 &lt;= s.length &lt;= 10^5<br>s[i] 都是 ASCII 码表中的可打印字符</p>
+<p>给定链表的结点数介于 1 和 100 之间。</p>
 </blockquote>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>终于遇到了简单题！太不容易了！</p>
-<p>主要采取双指针的解法，一个从左到右，一条从右到左，直接调换顺序，最后如果相等就直接跳出循环。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseString = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">let</span> left = <span class="number">0</span>, right = s.length -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> change = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">        change = s[left];</span><br><span class="line">        s[left] = s[right];</span><br><span class="line">        s[right] = change;</span><br><span class="line">        ++ left;</span><br><span class="line">        -- right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>学到了一个很巧妙的办法——快慢指针。</p>
+<p>通过两个指针，慢指针一次加一，快指针一次加二，那么在快指针到末尾的时候，慢指针就对应着链表中的中间位置，直接输入慢指针即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> middleNode = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    slow = fast = head;</span><br><span class="line">    <span class="keyword">while</span> (fast &amp;&amp; fast.next) &#123;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
-<h1 id="Description（557-反转字符串中的单词-III）"><a href="#Description（557-反转字符串中的单词-III）" class="headerlink" title="Description（557. 反转字符串中的单词 III）"></a>Description（557. 反转字符串中的单词 III）</h1><p>给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。</p>
+<h1 id="Description（19-删除链表的倒数第-N-个结点）"><a href="#Description（19-删除链表的倒数第-N-个结点）" class="headerlink" title="Description（19. 删除链表的倒数第 N 个结点）"></a>Description（19. 删除链表的倒数第 N 个结点）</h1><p>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。</p>
 <blockquote>
-<p>示例：</p>
-<p>输入：”Let’s take LeetCode contest”<br>输出：”s’teL ekat edoCteeL tsetnoc”</p>
+<p>示例 1：</p>
+<p>输入：head = [1,2,3,4,5], n = 2<br>输出：[1,2,3,5]</p>
+</blockquote>
+<blockquote>
+<p>示例 2：</p>
+<p>输入：head = [1], n = 1<br>输出：[]</p>
+</blockquote>
+<blockquote>
+<p>示例 3：</p>
+<p>输入：head = [1,2], n = 1<br>输出：[1]</p>
 </blockquote>
 <blockquote>
 <p>提示：</p>
-<p>在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。</p>
+<p>链表中结点的数目为 sz<br>1 &lt;= sz &lt;= 30<br>0 &lt;= Node.val &lt;= 100<br>1 &lt;= n &lt;= sz</p>
 </blockquote>
-<h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h1><p>我的解法是先将字符串末尾加一个空格，然后从头遍历，遇到空格时，将前面的字符串直接翻转，存到新的字符串，再在新数组后面加上一个空格，最后返回的数组后面会多一个空格，再把后面的空格删除就可以了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseWords = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s1 = s + <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> total = s1.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= total)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s1[i] != <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            ++ i;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(s1[i] == <span class="string">&#x27; &#x27;</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>( j=i-<span class="number">1</span>; j &gt;= left; --j)&#123;</span><br><span class="line">                result += s1[j];</span><br><span class="line">            &#125;</span><br><span class="line">            ++ i;</span><br><span class="line">            left = i;</span><br><span class="line">            result += <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    result = result.substring(<span class="number">0</span>,total);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>进阶：你能尝试使用一趟扫描实现吗？</p>
+</blockquote>
+<h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h1><p>本体也应用了快慢指针，因为要删除链表的倒数第n个节点，那么假设一个慢指针，一个快指针，快指针=慢指针+n，那么循环到最后时，当快指针走到链表末尾时，慢指针指向的节点就是要删除的节点，这时直接指向下下个节点就相当于删除该节点。</p>
+<p>考虑到特殊情况，如果快指针不为空，真实存在，那么以上成立；如果为空，就表示只有一个节点，那么直接返回头节点的下一个节点即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> removeNthFromEnd = <span class="function"><span class="keyword">function</span>(<span class="params">head, n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> slow = head, fast = head;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        fast = fast.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!fast)</span><br><span class="line">        <span class="keyword">return</span> head.next;</span><br><span class="line">    <span class="keyword">while</span>(fast.next != <span class="literal">null</span>) &#123;</span><br><span class="line">        fast = fast.next;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">    &#125;</span><br><span class="line">    slow.next = slow.next.next;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -260,29 +272,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/18/LeetCode--876.%20%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">LeetCode--876. 链表的中间结点 &amp;&amp; 19. 删除链表的倒数第 N 个结点</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/16/LeetCode-189.%20%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/"
+                           href="/2021/11/17/LeetCode%20--%20344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%20&amp;&amp;%20557.%20%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D%20III/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LeetCode--189.轮转数组 &amp;&amp; 283. 移动零 &amp;&amp; 167. 两数之和II - 输入有序数组</span>
+                                <span class="post-nav-title-item">LeetCode--344.反转字符串 &amp;&amp; 557. 反转字符串中的单词 III</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -391,7 +388,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description%EF%BC%88344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">Description（344.反转字符串）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Description%EF%BC%88557-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D-III%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">Description（557. 反转字符串中的单词 III）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">4.</span> <span class="nav-text">Solution</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Description%EF%BC%88876-%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">Description（876. 链表的中间结点）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Description%EF%BC%8819-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%AC-N-%E4%B8%AA%E7%BB%93%E7%82%B9%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">Description（19. 删除链表的倒数第 N 个结点）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">4.</span> <span class="nav-text">Solution</span></a></li></ol>
     </div>
 </div>
         </aside>
