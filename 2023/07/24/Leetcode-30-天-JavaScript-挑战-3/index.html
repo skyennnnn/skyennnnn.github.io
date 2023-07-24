@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Skyen">
+    
+    <title>
+        
+            Leetcode--30 天 JavaScript 挑战(3) |
+        
+        Skyen&#39;s Blog
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/head.jpeg">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/Misaka.jpg","favicon":"/images/head.jpeg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/3.JPG","description":"Bye bye baby blue , I wish you could see the wicked truth !"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Skyen's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Skyen&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Leetcode--30 天 JavaScript 挑战(3)</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/Misaka.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Skyen</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2023-07-24 09:15:45
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/LeetCode/">LeetCode</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%87%BD%E6%95%B0%E8%BD%AC%E6%8D%A2/">函数转换</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="2629-复合函数"><a href="#2629-复合函数" class="headerlink" title="2629. 复合函数"></a>2629. 复合函数</h2><p>请你编写一个函数，它接收一个函数数组 [f1, f2, f3，…， fn] ，并返回一个新的函数 fn ，它是函数数组的 复合函数 。</p>
+<p>[f(x)， g(x)， h(x)] 的 复合函数 为 fn(x) = f(g(h(x))) 。</p>
+<p>一个空函数列表的 复合函数 是 恒等函数 f(x) = x 。</p>
+<p>你可以假设数组中的每个函数接受一个整型参数作为输入，并返回一个整型作为输出。</p>
+<blockquote>
+<p>示例 1：<br>输入：functions = [x =&gt; x + 1, x =&gt; x * x, x =&gt; 2 * x], x = 4<br>输出：65<br>解释：<br>从右向左计算……<br>Starting with x = 4.<br>2 * (4) = 8<br>(8) * (8) = 64<br>(64) + 1 = 65</p>
+</blockquote>
+<blockquote>
+<p>示例 2：<br>输出：functions = [x =&gt; 10 * x, x =&gt; 10 * x, x =&gt; 10 * x], x = 1<br>输入：1000<br>解释：<br>从右向左计算……<br>10 * (1) = 10<br>10 * (10) = 100<br>10 * (100) = 1000</p>
+</blockquote>
+<blockquote>
+<p>示例 3：<br>输入：functions = [], x = 42<br>输出：42<br>解释：<br>空函数列表的复合函数就是恒等函数</p>
+</blockquote>
+<blockquote>
+<p>提示：<br>-1000 &lt;= x &lt;= 1000<br>0 &lt;= functions.length &lt;= 1000<br>所有函数都接受并返回一个整型</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;Function[]&#125;</span> <span class="variable">functions</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;Function&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> compose = <span class="function"><span class="keyword">function</span>(<span class="params">functions</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = functions.length-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            x = functions[i](x)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * const fn = compose([x =&gt; x + 1, x =&gt; 2 * x])</span></span><br><span class="line"><span class="comment"> * fn(4) // 9</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2666-只允许一次函数调用"><a href="#2666-只允许一次函数调用" class="headerlink" title="2666. 只允许一次函数调用"></a>2666. 只允许一次函数调用</h2><p>给定一个函数 fn ，它返回一个新的函数，返回的函数与原始函数完全相同，只不过它确保 fn 最多被调用一次。</p>
+<p>第一次调用返回的函数时，它应该返回与 fn 相同的结果。<br>第一次后的每次调用，它应该返回 undefined 。</p>
+<blockquote>
+<p>示例 1：<br>输入：fn = (a,b,c) =&gt; (a + b + c), calls = [[1,2,3],[2,3,6]]<br>输出：[{“calls”:1,”value”:6}]<br>解释：<br>const onceFn = once(fn);<br>onceFn(1, 2, 3); // 6<br>onceFn(2, 3, 6); // undefined, fn 没有被调用</p>
+</blockquote>
+<blockquote>
+<p>示例 2：<br>输入：fn = (a,b,c) =&gt; (a * b * c), calls = [[5,7,4],[2,3,6],[4,6,8]]<br>输出：[{“calls”:1,”value”:140}]<br>解释：<br>const onceFn = once(fn);<br>onceFn(5, 7, 4); // 140<br>onceFn(2, 3, 6); // undefined, fn 没有被调用<br>onceFn(4, 6, 8); // undefined, fn 没有被调用</p>
+</blockquote>
+<blockquote>
+<p>提示：<br>1 &lt;= calls.length &lt;= 10<br>1 &lt;= calls[i].length &lt;= 100<br>2 &lt;= JSON.stringify(calls).length &lt;= 1000</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;Function&#125;</span> <span class="variable">fn</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;Function&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> once = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> once = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">...args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !once ? once = fn(...args) : <span class="literal">undefined</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * let fn = (a,b,c) =&gt; (a + b + c)</span></span><br><span class="line"><span class="comment"> * let onceFn = once(fn)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * onceFn(1,2,3); // 6</span></span><br><span class="line"><span class="comment"> * onceFn(2,3,6); // returns undefined without calling fn</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2703-返回传递的参数的长度"><a href="#2703-返回传递的参数的长度" class="headerlink" title="2703. 返回传递的参数的长度"></a>2703. 返回传递的参数的长度</h2><p>请你编写一个函数 argumentsLength，返回传递给该函数的参数数量。</p>
+<blockquote>
+<p>示例 1：<br>输入：argsArr = [5]<br>输出：1<br>解释：<br>argumentsLength(5); // 1<br>只传递了一个值给函数，因此它应返回 1。</p>
+</blockquote>
+<blockquote>
+<p>示例 2：<br>输入：argsArr = [{}, null, “3”]<br>输出：3<br>解释：<br>argumentsLength({}, null, “3”); // 3<br>传递了三个值给函数，因此它应返回 3。</p>
+</blockquote>
+<blockquote>
+<p>提示：<br>argsArr 是一个有效的 JSON 数组<br>0 &lt;= argsArr.length &lt;= 100</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> argumentsLength = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> args.length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * argumentsLength(1, 2, 3); // 3</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2623-记忆函数"><a href="#2623-记忆函数" class="headerlink" title="2623. 记忆函数"></a>2623. 记忆函数</h2><p>请你编写一个函数，它接收另一个函数作为输入，并返回该函数的 记忆化 后的结果。</p>
+<p>记忆函数 是一个对于相同的输入永远不会被调用两次的函数。相反，它将返回一个缓存值。</p>
+<p>你可以假设有 3 个可能的输入函数：sum 、fib 和 factorial 。</p>
+<p> sum 接收两个整型参数 a 和 b ，并返回 a + b 。<br> fib 接收一个整型参数 n ，如果 n &lt;= 1 则返回 1，否则返回 fib (n - 1) + fib (n - 2)。<br> factorial 接收一个整型参数 n ，如果 n &lt;= 1 则返回  1 ，否则返回 factorial(n - 1) * n 。</p>
+<blockquote>
+<p>示例 1：<br>输入：<br>“sum”<br>[“call”,”call”,”getCallCount”,”call”,”getCallCount”]<br>[[2,2],[2,2],[],[1,2],[]]<br>输出：<br>[4,4,1,3,2]<br>解释：<br>const sum = (a, b) =&gt; a + b;<br>const memoizedSum = memoize(sum);<br>memoizedSum (2, 2);// 返回 4。sum() 被调用，因为之前没有使用参数 (2, 2) 调用过。<br>memoizedSum (2, 2);// 返回 4。没有调用 sum()，因为前面有相同的输入。<br>//总调用数： 1<br>memoizedSum(1、2);// 返回 3。sum() 被调用，因为之前没有使用参数 (1, 2) 调用过。<br>//总调用数： 2</p>
+</blockquote>
+<blockquote>
+<p>示例 2：<br>输入：<br>“factorial”<br>[“call”,”call”,”call”,”getCallCount”,”call”,”getCallCount”]<br>[[2],[3],[2],[],[3],[]]<br>输出：<br>[2,6,2,2,6,2]<br>解释：<br>const factorial = (n) =&gt; (n &lt;= 1) ? 1 : (n * factorial(n - 1));<br>const memoFactorial = memoize(factorial);<br>memoFactorial(2); // 返回 2。<br>memoFactorial(3); // 返回 6。<br>memoFactorial(2); // 返回 2。 没有调用 factorial()，因为前面有相同的输入。<br>// 总调用数：2<br>memoFactorial(3); // 返回 6。 没有调用 factorial()，因为前面有相同的输入。<br>// 总调用数：2</p>
+</blockquote>
+<blockquote>
+<p>示例 3：<br>输入：<br>“fib”<br>[“call”,”getCallCount”]<br>[[5],[]]<br>输出：<br>[8,1]<br>解释：<br>fib(5) = 8<br>// 总调用数：1</p>
+</blockquote>
+<blockquote>
+<p>Constraints:<br>0 &lt;= a, b &lt;= 105<br>1 &lt;= n &lt;= 10<br>at most 105 function calls<br>at most 105 attempts to access callCount<br>input function is sum, fib, or factorial</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;Function&#125;</span> <span class="variable">fn</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">memoize</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> cache = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> key = <span class="built_in">JSON</span>.stringify(args)</span><br><span class="line">        <span class="keyword">if</span> (!cache.has(key)) &#123;</span><br><span class="line">            cache.set(key, fn(...args));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cache.get(key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * let callCount = 0;</span></span><br><span class="line"><span class="comment"> * const memoizedFn = memoize(function (a, b) &#123;</span></span><br><span class="line"><span class="comment"> *	 callCount += 1;</span></span><br><span class="line"><span class="comment"> *   return a + b;</span></span><br><span class="line"><span class="comment"> * &#125;)</span></span><br><span class="line"><span class="comment"> * memoizedFn(2, 3) // 5</span></span><br><span class="line"><span class="comment"> * memoizedFn(2, 3) // 5</span></span><br><span class="line"><span class="comment"> * console.log(callCount) // 1 </span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/07/21/Leetcode-30-%E5%A4%A9-JavaScript-%E6%8C%91%E6%88%98-2/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Leetcode--30 天 JavaScript 挑战(2)</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Skyen</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2629-%E5%A4%8D%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">2629. 复合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2666-%E5%8F%AA%E5%85%81%E8%AE%B8%E4%B8%80%E6%AC%A1%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">2666. 只允许一次函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2703-%E8%BF%94%E5%9B%9E%E4%BC%A0%E9%80%92%E7%9A%84%E5%8F%82%E6%95%B0%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="nav-number">3.</span> <span class="nav-text">2703. 返回传递的参数的长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2623-%E8%AE%B0%E5%BF%86%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">2623. 记忆函数</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/header-shrink.js"></script><script src="/js/back2top.js"></script><script src="/js/dark-light-toggle.js"></script>
+
+
+    <script src="/js/local-search.js"></script>
+
+
+
+    <script src="/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="/js/left-side-toggle.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
